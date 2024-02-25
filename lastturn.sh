@@ -10,7 +10,7 @@ TARGET_DIR="~/Desktop/lotr2/sav"
 inotifywait -e modify,close_write "$FILE_TO_MONITOR" | while read -r _ _ _ path; do
   echo "The file '$path' appeared in directory '$TARGET_DIR' via '$FILE_TO_MONITOR'"
   # Copy the file to the target directory
-  cp "$path" "$TARGET_DIR/$FILE_TO_MONITOR"
+  cp "$FILE_TO_MONITOR" "$TARGET_DIR/$FILE_TO_MONITOR"
   hexdump -v -C "$TARGET_DIR/$FILE_TO_MONITOR" > "$TARGET_DIR/$FILE_TO_MONITOR.hex"
   # Update the git repository
   cd "$TARGET_DIR"

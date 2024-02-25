@@ -5,6 +5,10 @@ Commit game file to git repo on save.
 
 A bash script uses inotify to monitor file changes and add the new file to the repo.
 
+```bash
+sudo apt install inotify-tools
+```
+
 Patterns to look for:
 
 * longest span of continuous zeros
