@@ -25,14 +25,12 @@ Metrics:
 * two-byte int
 * string
 
-
 How many nobles, which nobles, which color
 Play's name and color
 
 Campagain type, or custom
 
 other details if custom.
-
 
 Looking for:
 armies

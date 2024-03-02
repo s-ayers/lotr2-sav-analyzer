@@ -1,0 +1,25 @@
+{
+  "name": "lotr2-sav-analyzer",
+  "version": "1.0.0",
+  "description": "Decodes the Lords of the realm2 file format",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-ayers/lotr2-sav-analyzer.git"
+  },
+  "author": "bluegeek9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-ayers/lotr2-sav-analyzer/issues"
+  },
+  "homepage": "https://github.com/s-ayers/lotr2-sav-analyzer#readme",
+  "dependencies": {
+    "binary-parser": "^2.2.1",
+    "simple-git": "^3.22.0",
+    "yaml": "^2.4.0"
+  }
+}

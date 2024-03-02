@@ -1,0 +1,79 @@
+file:
+  type: mapping
+  mapping:
+    map:
+      offset: 0x409d4
+      type: uint8
+    armies:
+      offset: 0x15724
+      end: 0x2F980
+      size: 107100
+      type: sequence
+      sequence:
+        type: army
+
+army:
+  type: mapping
+  size: 420
+  mapping:
+    name:
+      type: uint8
+    spaces_moved:
+      type: uint8
+    spaces_total:
+      type: uint8
+    wages:
+      type: uint16
+    total_men:
+      type: uint16
+    peasants:
+      type: uint16
+    crossbowmen:
+      type: uint16
+    macemen:
+      type: uint16
+    swordsmen:
+      type: uint16
+    pikemen:
+      type: uint16
+    archers:
+      type: uint16
+    knights:
+      type: uint16
+    seige:
+      type: seige
+    mercenary:
+      type: mercenary
+
+
+seige:
+  type: mapping
+  mapping:
+    catapults:
+      type: seige_equipment
+    towers:
+      type: seige_equipment
+    battering_rams:
+      type: seige_equipment
+
+seige_equipment:
+  type: mapping
+  size: 20
+  mapping:
+    progress:
+      type: uint8
+    seasons:
+      type: uint8
+    total:
+      type: uint8
+
+mercenary:
+  type: mapping
+  size: 3
+  mapping:
+    type:
+      type: uint8
+    total:
+      type: uint8
+    race:
+      type: uint8
