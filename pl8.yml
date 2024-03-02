@@ -1,0 +1,41 @@
+file:
+  endianness: little
+  type: mapping
+  mapping:
+    type:
+      type: uint16
+    tile_count:
+      type: uint16
+    unknown_000:
+      type: uint8
+    unknown_001:
+      type: uint8
+    unknown_002:
+      type: uint8
+    unknown_003:
+      type: uint8
+    tiles:
+      type: array
+      length: tile_count
+      array: tile
+
+tile:
+  endianness: little
+  type: mapping
+  mapping:
+    width:
+      type: uint16
+    height:
+      type: uint16
+    offset:
+      type: uint32
+    x:
+      type: uint16
+    y:
+      type: uint16
+    extra_type:
+      type: uint8
+    extra_rows:
+      type: uint8
+    unknown:
+      type: uint16
