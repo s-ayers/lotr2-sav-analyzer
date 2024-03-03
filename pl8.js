@@ -1,21 +1,29 @@
-import YAML from 'yaml';
 import fs from 'fs';
 import {Parser} from 'binary-parser';
 import {PNG} from "pngjs";
-import { parse } from 'path';
 
 const ORTHOGONAL = 0;
 const RUN_LENGTH_ENCODED = 1;
 
-
+/**
+ * Writes all the sprites to a single image.
+ */
 function write_image(parsed) {
-  const options = { width: 640, height: 480 };
+  const width = 640;
+  const pixal_size = 4;
+  const options = { width: width, height: 480 };
   const image = new PNG(options);
 
   for (const tile of parsed.sprites) {
-
+    for (let y = 0; y < tile.height; y+=1) {
+      const target_start = (width * pixal_size) * (tile.y + y) + (tile.x * pixal_size);
+      const source_start = y * tile.width * pixal_size;
+      const source_end = (y + 1) * tile.width * pixal_size;
+      tile.image.data.copy(image.data, target_start, source_start, source_end);
+    }
   }
 
+  return image;
 }
 
 /**
@@ -108,4 +116,4 @@ for (const tile of parsed.sprites) {
   i += 1;
 }
 
-// write_image(parsed).pack().pipe(fs.createWriteStream(`sprites/Arm_swor.png`));
+write_image(parsed).pack().pipe(fs.createWriteStream(`sprites/Arm_swor.png`));
