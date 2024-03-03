@@ -19,6 +19,7 @@
   "homepage": "https://github.com/s-ayers/lotr2-sav-analyzer#readme",
   "dependencies": {
     "binary-parser": "^2.2.1",
+    "pngjs": "^7.0.0",
     "simple-git": "^3.22.0",
     "yaml": "^2.4.0"
   }
